@@ -1,0 +1,36 @@
+- type: vessel
+  id: WGViperInterceptor
+  parent: BaseVessel
+  name: 'VG Interceptor'
+  description: 'A nimble pursuit fighter built to run a target down and shred it with rapid fire. Fast and nimble.'
+  price: 88500
+  category: Medium # 227 tiles
+  group: Viper
+  access: Viper
+  shuttlePath: /SharedMaps/_WG/Shipyard/Shuttles/VG/interceptor.yml
+  guidebookPage: null
+  class:
+  - Pursuit
+  - Mercenary
+  engine:
+  - Bananium
+
+- type: gameMap
+  id: WGViperInterceptor
+  mapName: 'VG Interceptor'
+  mapPath: /SharedMaps/_WG/Shipyard/Shuttles/VG/interceptor.yml
+  minPlayers: 0
+  stations:
+    WGViperInterceptor:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Interceptor VG{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          VGInfanteer: [ 0, 0 ]
+          VGLieutenant: [ 0, 0 ]
+          VGCommander: [ 0, 0 ]
